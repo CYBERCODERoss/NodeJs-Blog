@@ -8,8 +8,18 @@
   ],
   "routes": [
     {
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/app.js"
     }
-  ]
+  ],
+  "functions": {
+    "app.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  }
 }
