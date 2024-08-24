@@ -24,7 +24,7 @@ app.use(session({
   store: MongoStore.create({
     mongoUrl: process.env.MONGODB_URI
   }),
-  //cookie: { maxAge: new Date ( Date.now() + (3600000) ) } 
+  // cookie: { maxAge: new Date ( Date.now() + (3600000) ) } 
 }));
 app.use(express.static('public'));
 
@@ -37,11 +37,11 @@ app.locals.isActiveRoute = isActiveRoute;
 app.use('/', require('./server/routes/main'));
 app.use('/', require('./server/routes/admin'));
 
-// Export the Express app
+// Export the Express app for Vercel
 module.exports = app;
 
-// Only listen if not running on Vercel
-if (process.env.VERCEL_ENV !== 'production') {
+// Start server only if not running on Vercel
+if (!process.env.VERCEL) {
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
