@@ -37,6 +37,13 @@ app.locals.isActiveRoute = isActiveRoute;
 app.use('/', require('./server/routes/main'));
 app.use('/', require('./server/routes/admin'));
 
-// Remove the app.listen() call
-
+// Export the Express app
 module.exports = app;
+
+// Only listen if not running on Vercel
+if (process.env.VERCEL_ENV !== 'production') {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`App listening on port ${PORT}`);
+  });
+}
