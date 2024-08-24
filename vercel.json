@@ -7,11 +7,11 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/app.js"
+      "dest": "/api/index.js"
     }
   ],
   "functions": {
-    "app.js": {
+    "api/index.js": {
       "maxDuration": 60
     }
   }
