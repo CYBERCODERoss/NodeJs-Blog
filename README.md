@@ -37,7 +37,7 @@ A dynamic and feature-rich blog application built with Node.js, Express.js, and 
 
 ## 🖥️ Usage
 
-1. 🌐 Open a web browser and navigate to `http://localhost:3000`.
+1. 🌐 Open a web browser and navigate to `http://localhost:5000`.
 2. ✏️ Click on the "Create Post" button to create a new blog post.
 3. 📝 Fill in the post title, content, and author fields, and click "Submit".
 4. 👀 View, 🔄 update, or 🗑️ delete existing blog posts using the respective buttons.
