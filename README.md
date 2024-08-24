@@ -7,18 +7,17 @@ A dynamic and feature-rich blog application built with Node.js, Express.js, and 
 
 ## ✨ Features
 
-- 📝 Create, read, update, and delete blog posts
+- 📝 Create, read, update, and delete blog posts (CRUD)
 - 👤 User authentication and authorization
 - 💅 Attractive and responsive user interface
 - 🔍 Search functionality
-- 🏷️ Categorization and tagging system
-- 💬 Commenting system
+- 🏷️ Categorization
 
 ## 🛠️ Technologies Used
 
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB Atlas
-- **Frontend**: HTML, CSS, JavaScript (You can specify if you're using any frontend frameworks)
+- **Frontend**: HTML, CSS, JavaScript 
 - **Authentication**: JSON Web Tokens (JWT)
 
 ## 🚀 Getting Started
