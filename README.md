@@ -2,7 +2,7 @@
 
 A dynamic and feature-rich blog application built with Node.js, Express.js, and MongoDB Atlas.
 
-![NodeJS-Blog Screenshot](path/to/your/screenshot.png)
+![NodeJS-Blog Screenshot](Desktop/nodejsblog.png)
 
 ## ✨ Features
 
