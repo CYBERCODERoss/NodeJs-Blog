@@ -1,32 +1,16 @@
 <div class="author">
-  <h1 class="author__heading">Hi, I am Talat Faheem.</h1>
-  <p class="author__body">BackEnd & DevOps Engineer.</p>
+  <h1 class="author__heading">Welcome to Our Blogging Site</h1>
+  <p class="author__body">This blog is a personal project built using Node.js, Express, and MongoDB. It serves as a platform for sharing thoughts and ideas.</p>
 </div>
 
 <img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" alt="gif" class="hero-image" width="981" height="528">
 
-<section class="articles">
-  <h2 class="articles__heading">Latest Posts</h2>
+<div class="project-details">
+  <h2>About This Project</h2>
+  <p>This blog application allows users to create, read, update, and delete posts. It features user authentication and a responsive design.</p>
+</div>
 
-  <ul class="article-ul">
-    <% data.forEach(post => { %>
-      <li>
-        <a href="/post/<%= post._id %>">
-          <span><%= post.title %></span>
-          <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
-        </a>
-      </li>
-    <% }) %>
-  </ul>
-
-
-  <% if (nextPage !== null) { %>
-    <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
-  <% } %>
- 
-
-  
-
-
-
-</section>
+<div class="auth-buttons">
+  <a href="/admin" class="btn">Login</a>
+  <a href="/register" class="btn">Sign Up</a>
+</div>
