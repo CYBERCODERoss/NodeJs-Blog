@@ -10,6 +10,13 @@ const UserSchema = new Schema({
   password: {
     type: String,
     required: true,
+    minlength: 6 // Minimum length for password
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    match: /.+\@.+\..+/ // Basic email validation
   }
 });
 

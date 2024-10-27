@@ -1,16 +1,38 @@
-<div class="author">
-  <h1 class="author__heading">Welcome to Our Blogging Site</h1>
-  <p class="author__body">This blog is a personal project built using Node.js, Express, and MongoDB. It serves as a platform for sharing thoughts and ideas.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" alt="gif" class="hero-image" width="981" height="528">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Our Blogging Site</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
 
-<div class="project-details">
-  <h2>About This Project</h2>
-  <p>This blog application allows users to create, read, update, and delete posts. It features user authentication and a responsive design.</p>
-</div>
+<body>
+  <!-- <%- include('./partials/header.ejs') %> -->
 
-<div class="auth-buttons">
-  <a href="/admin" class="btn">Login</a>
-  <a href="/register" class="btn">Sign Up</a>
-</div>
+  <div class="container">
+    <img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" alt="Blogging illustration" class="hero-image">
+
+    <div class="main-content">
+      <div class="project-details">
+        <h2>About NeuroPen</h2>
+        <p>Our blogging platform is a robust, feature-rich application built with cutting-edge technologies:</p>
+        <ul>
+          <li><strong>Node.js & Express:</strong> Powering our backend for lightning-fast performance.</li>
+          <li><strong>MongoDB:</strong> Ensuring flexible and scalable data storage.</li>
+          <li><strong>User Authentication:</strong> Secure login and registration system.</li>
+          <li><strong>CRUD Operations:</strong> Full control over your blog posts - Create, Read, Update, and Delete.</li>
+          <li><strong>Responsive Design:</strong> A seamless experience across all devices.</li>
+          <li><strong>Markdown Support:</strong> Write your posts in Markdown for easy formatting.</li>
+          <li><strong>Comment System:</strong> Engage with your readers through our built-in commenting feature.</li>
+        </ul>
+        <p>Whether you're a seasoned blogger or just starting out, our platform provides all the tools you need to share your thoughts with the world.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- <%- include('./partials/footer.ejs') %> -->
+</body>
+
+</html>

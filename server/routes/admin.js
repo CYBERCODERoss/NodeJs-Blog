@@ -55,20 +55,20 @@ router.get('/admin', async (req, res) => {
 router.post('/admin', async (req, res) => {
   try {
     const { username, password } = req.body;
-    
-    const user = await User.findOne( { username } );
 
-    if(!user) {
-      return res.status(401).json( { message: 'Invalid credentials' } );
+    const user = await User.findOne({ username });
+
+    if (!user) {
+      return res.status(401).json({ message: 'Invalid credentials' });
     }
 
+    // Compare the plaintext password with the hashed password
     const isPasswordValid = await bcrypt.compare(password, user.password);
-
-    if(!isPasswordValid) {
-      return res.status(401).json( { message: 'Invalid credentials' } );
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: 'Invalid credentials' });
     }
 
-    const token = jwt.sign({ userId: user._id}, jwtSecret );
+    const token = jwt.sign({ userId: user._id }, jwtSecret);
     res.cookie('token', token, { httpOnly: true });
     res.redirect('/dashboard');
 
@@ -267,5 +267,40 @@ router.get('/logout', (req, res) => {
   res.redirect('/');
 });
 
+
+/**
+ * POST /signup
+ * Admin - Handle Sign Up
+ */
+router.post('/signup', async (req, res) => {
+  try {
+    const { username, email, password } = req.body;
+
+    // Check if user already exists
+    const existingUser = await User.findOne({ $or: [{ username }, { email }] });
+    if (existingUser) {
+      return res.render('admin/error', { errorMessage: 'Username or email already exists' });
+    }
+
+    // Hash the password before saving
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new User({ username, email, password: hashedPassword });
+    await newUser.save();
+
+    res.redirect('/admin'); // Redirect to login page after successful sign-up
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
+/**
+ * GET /signup
+ * Admin - Sign Up Page
+ */
+router.get('/signup', (req, res) => {
+  res.render('admin/signup', { layout: adminLayout });
+});
 
 module.exports = router;  

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
 const About = require('../models/about');
+const adminLayout = '../views/layouts/admin'; // Add this line
 
 /**
  * GET /
@@ -186,7 +187,12 @@ router.get('/about', async (req, res) => {
   }
 });
 
-
-
+/**
+ * GET /signup
+ * Main - Sign Up Page
+ */
+router.get('/signup', (req, res) => {
+  res.render('admin/signup', { layout: adminLayout });
+});
 
 module.exports = router;
